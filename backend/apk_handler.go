@@ -67,7 +67,7 @@ func ApkHandler(r *mux.Router, db *gorm.DB) {
 			log.Fatal("error", errBase)
 		}
 
-		os.WriteFile("/files/lates.apk", data, os.ModePerm)
+		os.WriteFile("/files/latest.apk", data, os.ModePerm)
 		db.Save(&newApk)
 		json.NewEncoder(w).Encode(newApk.Version)
 
